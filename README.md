@@ -1,2 +1,3 @@
 # jekyll-is-announcer
-Формирует анонсы новых постов
+
+Announcing new blog posts (to Telegram channel)
