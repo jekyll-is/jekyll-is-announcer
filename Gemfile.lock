@@ -4,6 +4,7 @@ PATH
     jekyll-is-announcer (0.8.0)
       is-static-files (~> 0.8)
       jekyll (~> 4.3)
+      liquid (~> 4.0)
 
 GEM
   remote: https://rubygems.org/

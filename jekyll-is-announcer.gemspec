@@ -12,7 +12,9 @@ Gem::Specification.new do |s|
   s.required_ruby_version = "~> 3.4"
 
   s.add_dependency "jekyll", "~> 4.3"
+  s.add_dependency "liquid", "~> 4.0"
   s.add_dependency "is-static-files", "~> 0.8"
+  s.add_dependency "is-ial-parser", "~> 0.8"
 
   s.add_development_dependency "rspec", "~> 3.13"
   s.add_development_dependency "rake", "~> 13.3"
