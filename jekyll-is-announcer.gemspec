@@ -5,7 +5,8 @@ Gem::Specification.new do |s|
   s.description = "Announcing new blog posts (to Telegram channel and to IndexNow)."
   s.authors     = ["Ivan Shikhalev"]
   s.email       = ["shikhalev@gmail.com"]
-  s.files       = Dir["lib/**/*", "README.md", "LICENSE"]
+  s.files       = Dir["{lib,assets,bin}/**/*", "README.md", "LICENSE"]
+  s.executables = Dir.children("bin")
   s.homepage    = "https://github.com/jekyll-is/jekyll-is-announcer"
   s.license     = "GPL-3.0-or-later"
 
