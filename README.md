@@ -1,8 +1,12 @@
+| **EN** | [ru](README-ru.md) |
+|----------|----------|
+
 # jekyll-is-announcer
 
-[![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![Ruby](https://img.shields.io/badge/ruby-%3E%3D3.4-red.svg)](https://www.ruby-lang.org/en/)
-[![Jekyll](https://img.shields.io/badge/jekyll-%7E%3E4.3-green.svg)](https://jekyllrb.com/)
+[![GitHub License](https://img.shields.io/github/license/jekyll-is/is-kramdown-hooked)](LICENSE)
+[![Gem Version](https://badge.fury.io/rb/is-kramdown-hooked.svg?icon=si%3Arubygems)](https://badge.fury.io/rb/is-kramdown-hooked)
+[![Ruby](https://github.com/jekyll-is/is-kramdown-hooked/actions/workflows/ruby.yml/badge.svg)](https://github.com/jekyll-is/is-kramdown-hooked/actions/workflows/ruby.yml)
+![Coverage](coverage-badge.svg)
 
 `jekyll-is-announcer` is a Ruby gem for Jekyll that automates announcing new blog posts to external services, currently supporting Telegram channels and IndexNow.
 
