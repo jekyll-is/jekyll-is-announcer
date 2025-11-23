@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'fileutils'
 require 'net/http'
 require 'uri'
 require 'json'
@@ -18,10 +19,10 @@ module AnnouncerBin
         }
       )
       
-      http = Net::HTTP::new uri.host, uri.port
+      http = Net::HTTP::new bot_uri.host, bot_uri.port
       http.use_ssl = true
 
-      request = Net::HTTP::Post::new uri.path, 'Content-Type' => 'application/json'
+      request = Net::HTTP::Post::new bot_uri.path, 'Content-Type' => 'application/json'
       request.body = bot_msg
 
       response = http.request request
@@ -61,7 +62,7 @@ module AnnouncerBin
 
     def telegram_message post
       [
-        "*[#{telegram_escape(port['title'])}](#{post['url']})*",
+        "*[#{telegram_escape(post['title'])}](#{post['url']})*",
         "",
         telegram_escape(post['description']),
         "",
@@ -74,11 +75,11 @@ module AnnouncerBin
 
 end
 
-announced_path = File.join '.', '_data', 'announcer.json'
-announced_site_path = File.join '.', '_site/data', 'announcer.json'
+announced_path = File.join '.', '_data', 'announced.json'
+announced_site_path = File.join '.', '_site/data', 'announced.json'
 announces_path = File.join '.', '/tmp/', 'announces.json'
 
-if File.exists?(announces_path)
+if File.exist?(announces_path)
   announced = begin 
     JSON.load_file announced_path
   rescue Exception => e
@@ -100,7 +101,9 @@ if File.exists?(announces_path)
       end
     end
   end
-  File.write announced_path, JSON.pretty_generate(announced)
-  FileUtils.mkdir_p './_site/data'
-  File.write announced_site_path, JSON.pretty_generate(announced)
+  if save_flag
+    File.write announced_path, JSON.pretty_generate(announced)
+    FileUtils.mkdir_p './_site/data'
+    File.write announced_site_path, JSON.pretty_generate(announced)
+  end
 end

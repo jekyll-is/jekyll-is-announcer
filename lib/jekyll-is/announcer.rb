@@ -46,7 +46,7 @@ module JekyllIS
 
     def process_posts
       @site.posts.docs.select { |d| d.data['announce'] }.each do |doc|
-        key = doc.path
+        key = doc.relative_path
         CHANNELS.each do |channel|
           next unless @config[channel]
           channel_data = @data[channel] || {}
