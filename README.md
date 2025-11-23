@@ -92,6 +92,6 @@ This project is licensed under the [GPL-3.0-or-later License](https://www.gnu.or
 
 - GitHub repository: https://github.com/jekyll-is/jekyll-is-announcer
 
----
+-----
 
 Created by [Ivan Shikhalev](https://github.com/shikhalev)
