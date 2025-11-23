@@ -3,7 +3,7 @@
 
 # jekyll-is-announcer
 
-[jekyll-is-announcer] — это Ruby gem для Jekyll, который автоматизирует анонсирование новых постов блога во внешние сервисы, в первую очередь в Telegram-каналы и систему IndexNow.
+`jekyll-is-announcer` — это Ruby gem для Jekyll, который автоматизирует анонсирование новых постов блога во внешние сервисы, в первую очередь в Telegram-каналы и систему IndexNow.
 
 ## Возможности
 
