@@ -9,7 +9,7 @@ SimpleCov.start do
   minimum_coverage 0  # минимальный процент покрытия
 end
 
-require_relative "../lib/jekyll-is/announcer.rb"
+require_relative "../lib/jekyll-is-announcer"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|

@@ -1,7 +1,9 @@
 
 require 'set'
 require 'liquid'
+require 'jekyll'
 require 'is-ial-parser'
+require 'is-static-files'
 
 module JekyllIS
 
@@ -40,3 +42,9 @@ module JekyllIS
 end
 
 Liquid::Template::register_tag 'announce_link', JekyllIS::AnnounceLink
+
+Jekyll::Hooks::register :site, :post_read do |site|
+  js_path = File.expand_path '../../assets/announcer.js', __dir__
+  js_file = IS::StaticFile::new site, '/js/', 'announcer.js', source: js_path
+  site.static_files << js_file
+end
