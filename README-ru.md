@@ -1,8 +1,7 @@
-# jekyll-is-announcer
+| [en](README.md) | RU |
+|----------|----------|
 
-[![Лицензия: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![Ruby](https://img.shields.io/badge/ruby-%3E%3D3.4-red.svg)](https://www.ruby-lang.org/ru/)
-[![Jekyll](https://img.shields.io/badge/jekyll-%7E%3E4.3-green.svg)](https://jekyllrb.com/)
+# jekyll-is-announcer
 
 [jekyll-is-announcer] — это Ruby gem для Jekyll, который автоматизирует анонсирование новых постов блога во внешние сервисы, в первую очередь в Telegram-каналы и систему IndexNow.
 
