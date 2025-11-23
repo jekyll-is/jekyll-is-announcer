@@ -8,16 +8,18 @@
 [![Ruby](https://github.com/jekyll-is/jekyll-is-announcer/actions/workflows/ruby.yml/badge.svg)](https://github.com/jekyll-is/jekyll-is-announcer/actions/workflows/ruby.yml) 
 ![Coverage](coverage-badge.svg)
 
-`jekyll-is-announcer` is a Ruby gem for Jekyll that automates announcing new blog posts to external services, currently supporting Telegram channels and IndexNow.
+`jekyll-is-announcer` is a Ruby gem for Jekyll that automates announcing new blog posts to external services, primarily Telegram channels and IndexNow.
 
 ## Features
 
-- Automatically detects new posts in your Jekyll site marked for announcing.
-- Publishes announcements to configured Telegram channels using Telegram Bot API.
-- Supports message formatting with MarkdownV2 and automatic escaping of special characters.
-- Generates JSON files for announced posts, allowing integration with other announcement channels like IndexNow.
-- Extensible architecture to add more channels and notification methods.
-- Comes with RSpec tests and code coverage setup.
+- Automatic detection of new posts in your Jekyll site marked with `announce: true` in the front matter.
+- Publishes announcements to configured Telegram channels via the Telegram Bot API, supporting MarkdownV2 formatting and automatic escaping of special characters.
+- Generates JSON files containing announcement data (`announces.json`) for integration with other announcement channels, such as IndexNow.
+- Extensible architecture enables adding more channels and notification methods.
+- Includes assets (e.g., JavaScript files) automatically served with your Jekyll site using custom StaticFile handling.
+- Provides executable scripts in the `bin` directory accessible via `bundle exec` for manual announcement triggering.
+- Supports Ruby version 3.4+ and Jekyll version 4.3+.
+- Comes with RSpec tests and code coverage tracking with SimpleCov.
 
 ## Installation
 
@@ -27,7 +29,7 @@ Add this line to your Jekyll site's `Gemfile`:
 gem 'jekyll-is-announcer', '~> 0.8.0'
 ```
 
-Then run:
+Then execute:
 
 ```
 bundle install
@@ -35,7 +37,7 @@ bundle install
 
 ## Configuration
 
-In your Jekyll `_config.yml`, add an `announcer` section specifying channels and settings:
+Add an `announcer` section to your Jekyll `_config.yml`:
 
 ```
 announcer:
@@ -45,28 +47,31 @@ announcer:
     chat_id: "<your-telegram-chat-id>"
 ```
 
-Mark posts you want to announce with `announce: true` in the front matter:
-
-```
-***
-title: "New post"
-announce: true
-***
-```
-
 ## Usage
 
-When you build your Jekyll site, the announcer plugin detects new posts, generates announcement JSON files (`announces.json`), and sends messages to Telegram via the bot token specified in the environment variable `TELEGRAM_BOT_TOKEN`.
-
-Example environment setup (Linux/macOS):
+Mark the posts you want to announce in their front matter:
 
 ```
-export TELEGRAM_BOT_TOKEN="your_bot_token_here"
+title: "My New Post"
+announce: true
+```
+
+When you build your Jekyll site, the announcer plugin will:
+
+- Detect new posts with `announce: true`.
+- Generate the announcement JSON file (`announces.json`) in the `_tmp` folder.
+- Send messages to Telegram using the bot token specified in the environment variable `TELEGRAM_BOT_TOKEN`.
+- Keep track of published announcements status in a local file (`announced.json`).
+
+To manually trigger the announcement process, run:
+
+```
+bundle exec jekyll-is-announcer
 ```
 
 ## Development
 
-Clone the repository and install dependencies with bundler:
+Clone the repository and install dependencies:
 
 ```
 git clone https://github.com/jekyll-is/jekyll-is-announcer.git
@@ -74,24 +79,16 @@ cd jekyll-is-announcer
 bundle install
 ```
 
-Run tests using Rake and RSpec:
+Run tests with:
 
 ```
 rake spec
 ```
 
-## Contributing
-
-Contributions are welcome. Please fork the repository and submit pull requests. Ensure tests pass before submitting.
-
 ## License
 
-This project is licensed under the [GPL-3.0-or-later License](https://www.gnu.org/licenses/gpl-3.0.html).
+This project is licensed under the GPL-3.0-or-later License.
 
 ## Links
 
 - GitHub repository: https://github.com/jekyll-is/jekyll-is-announcer
-
------
-
-Created by [Ivan Shikhalev](https://github.com/shikhalev)
