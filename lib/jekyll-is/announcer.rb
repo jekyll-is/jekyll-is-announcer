@@ -73,9 +73,7 @@ module JekyllIS
     end
 
     def generate_announces_file
-      tmpdir = File.join @site.source, '/tmp/'
-      FileUtils.mkdir_p tmpdir
-      target = File.join tmpdir, 'announces.json'
+      target = File.join @site.source, '.announces.json'
       File.write target, JSON.pretty_generate(@announces)
     end
 

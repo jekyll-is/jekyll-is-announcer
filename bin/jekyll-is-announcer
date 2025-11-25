@@ -10,7 +10,7 @@ module AnnouncerBin
   class << self
 
     def telegram post, config
-      bot_uri = URI("https://api.telegram.org/bot#{ENV['TELEGRAM_BOT_TOKEN']}/sendMessage")
+      bot_uri = URI("https://api.telegram.org/bot#{ENV['TG_BOT_TOKEN']}/sendMessage")
       bot_msg = JSON.generate(
         {
           'chat_id' => config['chat_id'],
@@ -77,7 +77,7 @@ end
 
 announced_path = File.join '.', '_data', 'announced.json'
 announced_site_path = File.join '.', '_site/data', 'announced.json'
-announces_path = File.join '.', '/tmp/', 'announces.json'
+announces_path = File.join '.', '.announces.json'
 
 if File.exist?(announces_path)
   announced = begin 
