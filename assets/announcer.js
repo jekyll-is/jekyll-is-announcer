@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const link = elem.querySelector('a');
                 if (link) {
                     link.href = data[key];
-                    elem.style.display = 'inline-block';
+                    elem.style.display = '';
                 }
             });
         })

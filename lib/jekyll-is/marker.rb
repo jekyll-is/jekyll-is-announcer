@@ -23,7 +23,7 @@ module JekyllIS
       caption = @params[:caption] || @params[:title]
       page = context.registers[:page]
       key = page['path']
-      result = "<div markdown='span' class='announcer-block' style='display:none;' data-key='#{key}' data-channel='#{channel}'><a href='#' title='#{title}'>#{caption}</a></div>"
+      result = "<div markdown='span' class='announcer-block announcer-channel-#{channel}' style='display:none;' data-key='#{key}' data-channel='#{channel}'><a href='#' target='_blank' title='#{title}'>#{caption}</a></div>"
       result += "\n<script src='/js/announcer.js'></script>" if once?(key)
       result
     end
