@@ -93,6 +93,7 @@ if File.exist?(announces_path)
     next unless config && config['method']
     posts = anno_data['posts']
     posts.each do |key, value|
+      next if announced[channel] && announced[channel][key]
       result = AnnouncerBin.send config['method'], value, config
       if result
         announced[channel] ||= {}
