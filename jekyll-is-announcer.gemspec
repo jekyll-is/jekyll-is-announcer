@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "jekyll-is-announcer"
-  s.version     = "0.8.0.6"
+  s.version     = "0.8.0.8"
   s.summary     = "Announcing new blog posts"
   s.description = "Announcing new blog posts (to Telegram channel and to IndexNow)."
   s.authors     = ["Ivan Shikhalev"]
