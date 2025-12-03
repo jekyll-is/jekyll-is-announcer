@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    jekyll-is-announcer (0.8.0.10)
-      is-ial-parser (~> 0.8)
+    jekyll-is-announcer (0.8.1)
+      is-ial-parser (~> 0.8.1)
       is-static-files (~> 0.8)
       jekyll (~> 4.3)
       liquid (~> 4.0)
