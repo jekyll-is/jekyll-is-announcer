@@ -1,5 +1,6 @@
 
 require 'fileutils'
+require 'date'
 require 'json'
 require 'jekyll'
 require 'is-static-files'
@@ -54,6 +55,7 @@ module JekyllIS
             @announces[channel] ||= { 'config' => @config[channel], 'posts' => {} }
             @announces[channel]['posts'][key] = {
               'url' => @config['url'] + doc.url,
+              'date' => doc.date.strftime('%Y/%m/%d'),
               'title' => doc.data['title'],
               'description' => doc.data['description'],
               'categories' => get_categories(doc)
