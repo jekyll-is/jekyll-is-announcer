@@ -4,7 +4,7 @@
 # jekyll-is-announcer
 
 [![GitHub License](https://img.shields.io/github/license/jekyll-is/jekyll-is-announcer)](LICENSE)
-[![Gem Version](https://badge.fury.io/rb/jekyll-is-announcer.svg?icon=si%3Arubygems&d=2)](https://badge.fury.io/rb/jekyll-is-announcer)
+[![Gem Version](https://badge.fury.io/rb/jekyll-is-announcer.svg?icon=si%3Arubygems&d=3)](https://badge.fury.io/rb/jekyll-is-announcer)
 [![Ruby](https://github.com/jekyll-is/jekyll-is-announcer/actions/workflows/ruby.yml/badge.svg)](https://github.com/jekyll-is/jekyll-is-announcer/actions/workflows/ruby.yml) 
 ![Coverage](coverage-badge.svg)
 
