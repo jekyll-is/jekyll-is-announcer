@@ -62,8 +62,7 @@ module AnnouncerBin
 
     def telegram_message post
       [
-        "*[#{telegram_escape(post['title'])}](#{post['url']})*",
-        "#{telegram_escape(post['date'])}",
+        "*[#{telegram_escape(post['title'])}](#{post['url']})* #{telegram_escape('|')} _#{telegram_escape(post['date'])}_",
         "",
         telegram_escape(post['description']),
         "",
